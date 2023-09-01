@@ -102,7 +102,7 @@ add_action(
 		 * - https://github.com/WordPress/gutenberg/blob/e2941e9741bb8e21f0d7965d6bf70d43113bade2/packages/block-editor/src/components/iframe/index.js#L198
 		 * - https://github.com/WordPress/gutenberg/blob/e2941e9741bb8e21f0d7965d6bf70d43113bade2/packages/block-editor/src/components/iframe/index.js#L204
 		 */
-		if ( 'post-new.php' === $pagenow || 'post.php' === $pagenow ) {
+		if ( 'post-new.php' === $pagenow || 'post.php' === $pagenow || 'site-editor.php' === $pagenow ) {
 			return;
 		}
 
