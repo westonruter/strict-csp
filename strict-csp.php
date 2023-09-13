@@ -60,11 +60,6 @@ function get_csp_header_value(): string {
 		'http:'
 	);
 
-	// Needed for templating with Underscores/Lodash.
-	if ( is_admin() ) {
-		$script_src_sources[] = "'unsafe-eval'";
-	}
-
 	return join(
 		'; ',
 		array(
@@ -82,7 +77,7 @@ function send_csp_header() {
 	header( sprintf( 'Content-Security-Policy: %s', get_csp_header_value() ) );
 }
 
-// Send the header on the frontend and in the admin.
+// Send the header on the frontend and in the login screen.
 add_filter(
 	'wp_headers',
 	static function ( $headers ) {
@@ -91,24 +86,6 @@ add_filter(
 	}
 );
 add_action( 'login_init', __NAMESPACE__ . '\send_csp_header' );
-
-add_action(
-	'admin_init',
-	static function () {
-		global $pagenow;
-
-		/*
-		 * Not compatible with the block editor since the introduction of iframing. See:
-		 * - https://github.com/WordPress/gutenberg/blob/e2941e9741bb8e21f0d7965d6bf70d43113bade2/packages/block-editor/src/components/iframe/index.js#L198
-		 * - https://github.com/WordPress/gutenberg/blob/e2941e9741bb8e21f0d7965d6bf70d43113bade2/packages/block-editor/src/components/iframe/index.js#L204
-		 */
-		if ( 'post-new.php' === $pagenow || 'post.php' === $pagenow || 'site-editor.php' === $pagenow ) {
-			return;
-		}
-
-		send_csp_header();
-	}
-);
 
 // Add the nonce attribute to scripts.
 add_filter(
