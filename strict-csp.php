@@ -9,9 +9,9 @@
  *
  * @wordpress-plugin
  * Plugin Name: Strict CSP
- * Description: Proof of concept for enabling a <a href="https://csp.withgoogle.com/docs/strict-csp.html">Strict Content Security Policy</a> when the patch from WordPress core Trac <a href="https://core.trac.wordpress.org/ticket/58664">#58664</a> is applied.
+ * Description: Proof of concept for enabling a <a href="https://csp.withgoogle.com/docs/strict-csp.html">Strict Content Security Policy</a> when the patch from WordPress core Trac <a href="https://core.trac.wordpress.org/ticket/58664">#58664</a> is applied. Policy is enabled on frontend and login screen only; the policy cannot be applied to the WP Admin yet.
  * Plugin URI: https://gist.github.com/westonruter/c8b49406391a8d86a5864fb41a523ae9
- * Version: 0.1.0
+ * Version: 0.2.0
  * Author: Weston Ruter
  * Author URI: https://weston.ruter.net/
  * License: GNU General Public License v2 (or later)
