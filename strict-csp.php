@@ -41,23 +41,36 @@ const VERSION = '0.1.0';
 /**
  * Gets CSP nonce.
  *
- * @return string
+ * @return non-empty-string Nonce.
  */
 function get_nonce(): string {
 	static $nonce = null;
 	if ( null === $nonce ) {
 		$nonce = wp_create_nonce( 'csp' );
 	}
+	/**
+	 * Nonce.
+	 *
+	 * @var non-empty-string $nonce
+	 */
 	return $nonce;
 }
 
 /**
  * Adds nonce attribute to script attributes.
  *
- * @param string[] $attributes Script attributes.
- * @return string[] Amended attributes.
+ * @param array<string, string>|mixed $attributes Script attributes.
+ * @return array<string, string> Amended attributes.
  */
-function add_nonce_to_script_attributes( array $attributes ): array {
+function add_nonce_to_script_attributes( $attributes ): array {
+	if ( ! is_array( $attributes ) ) {
+		$attributes = array();
+	}
+	/**
+	 * Because plugins do bad things.
+	 *
+	 * @var array<string, string> $attributes
+	 */
 	$attributes['nonce'] = get_nonce();
 	return $attributes;
 }
@@ -109,18 +122,30 @@ function get_csp_header_value(): string {
 /**
  * Sends Strict CSP header.
  */
-function send_csp_header() {
+function send_csp_header(): void {
 	header( sprintf( 'Content-Security-Policy: %s', get_csp_header_value() ) );
 }
 
-// Send the header on the frontend and in the login screen.
-add_filter(
-	'wp_headers',
-	static function ( $headers ) {
-		$headers['Content-Security-Policy'] = get_csp_header_value();
-		return $headers;
+/**
+ * Sends the header on the frontend and in the login screen.
+ *
+ * @param array<string, string>|mixed $headers Headers.
+ * @return array<string, string> Headers.
+ */
+function filter_wp_headers( $headers ): array {
+	if ( ! is_array( $headers ) ) {
+		$headers = array();
 	}
-);
+	/**
+	 * Because plugins do bad things.
+	 *
+	 * @var array<string, string> $headers
+	 */
+	$headers['Content-Security-Policy'] = get_csp_header_value();
+	return $headers;
+}
+
+add_filter( 'wp_headers', __NAMESPACE__ . '\filter_wp_headers' );
 add_action( 'login_init', __NAMESPACE__ . '\send_csp_header' );
 
 // Add the nonce attribute to scripts.
