@@ -1,9 +1,17 @@
 <?php
 /**
+ * Strict CSP Plugin for WordPress
+ *
+ * @package   StrictCSP
+ * @author    Weston Ruter, Google
+ * @license   GPL-2.0-or-later
+ * @copyright 2023 Google Inc.
+ *
+ * @wordpress-plugin
  * Plugin Name: Strict CSP
  * Plugin URI: https://github.com/westonruter/strict-csp
  * Description: ...
- * Requires at least: 6.8
+ * Requires at least: 6.4
  * Requires PHP: 8.1
  * Version: 0.1.0
  * Author: Weston Ruter
@@ -13,8 +21,6 @@
  * Update URI: https://github.com/westonruter/strict-csp
  * GitHub Plugin URI: https://github.com/westonruter/strict-csp
  * Primary Branch: main
- *
- * @package StrictCSP
  */
 
 namespace StrictCSP;
