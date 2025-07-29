@@ -106,7 +106,7 @@ function get_csp_header_value(): string {
 		"'unsafe-inline'",
 		"'strict-dynamic'",
 		'https:',
-		'http:'
+		'http:',
 	);
 
 	return join(
@@ -114,7 +114,7 @@ function get_csp_header_value(): string {
 		array(
 			"object-src 'none'",
 			sprintf( 'script-src %s', join( ' ', $script_src_sources ) ),
-			"base-uri 'none'" // Note: jQuery can violate this in jQuery.parseHTML() due to <https://github.com/jquery/jquery/issues/2965>.
+			"base-uri 'none'", // Note: jQuery can violate this in jQuery.parseHTML() due to <https://github.com/jquery/jquery/issues/2965>.
 		)
 	);
 }
