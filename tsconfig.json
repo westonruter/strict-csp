@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"noEmit": true,
+		"allowJs": true,
+		"target": "es2020",
+		"moduleResolution": "nodenext",
+		"module": "nodenext",
+		"skipLibCheck": true,
+		"strict": true,
+		"noImplicitAny": true
+	},
+	"include": [ "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx", "**/*.mjs" ],
+	"exclude": [ "vendor" ]
+}

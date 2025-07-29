@@ -1,0 +1,5 @@
+*.zip
+dist/
+node_modules/
+readme.txt
+vendor/

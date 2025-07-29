@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ruleset name="wp-plugin-template" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+	<config name="text_domain" value="wp-plugin-template"/>
+
+	<rule ref="vendor/wpackagist-plugin/plugin-check/vendor/plugin-check/phpcs-sniffs/PluginCheck/ruleset.xml" />
+	<rule ref="vendor/wpackagist-plugin/plugin-check/phpcs-rulesets/plugin-check.ruleset.xml" />
+
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.2-"/>
+
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress-Extra" />
+	<rule ref="WordPress.WP.I18n"/>
+
+	<arg value="ps"/>
+	<arg name="extensions" value="php"/>
+
+	<file>.</file>
+
+	<!-- Check up to 20 files simultaneously. -->
+	<arg name="parallel" value="20"/>
+
+	<!-- Do not apply script rules for unit tests -->
+	<rule ref="WordPress.WP.EnqueuedResources.NonEnqueuedScript">
+		<exclude-pattern>tests/*</exclude-pattern>
+	</rule>
+
+	<rule ref="SlevomatCodingStandard.Functions.StaticClosure" />
+	<rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint" />
+	<rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint">
+		<properties>
+			<property name="enableMixedTypeHint" value="false" /><!-- Only available in PHP 8.0+ -->
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
+
+	<!-- Exclude node_modules and vendor directories. -->
+	<exclude-pattern>./node_modules/*</exclude-pattern>
+	<exclude-pattern>./vendor/*</exclude-pattern>
+</ruleset>

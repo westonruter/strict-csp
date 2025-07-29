@@ -1,0 +1,10 @@
+parameters:
+	level: 10
+	treatPhpDocTypesAsCertain: false
+	paths:
+		- .
+	excludePaths:
+		- vendor
+		- node_modules
+	bootstrapFiles:
+		- tools/phpstan/constants.php
