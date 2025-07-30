@@ -1,11 +1,11 @@
 {
-	"name": "wp-plugin-template",
+	"name": "strict-csp",
 	"author": "Weston Ruter",
 	"license": "GPL-2.0-or-later",
 	"prettier": "@wordpress/prettier-config",
-	"homepage": "https://github.com/westonruter/wp-plugin-template",
-	"repository": "https://github.com/westonruter/wp-plugin-template",
-	"bugs": "https://github.com/westonruter/wp-plugin-template/issues",
+	"homepage": "https://github.com/westonruter/strict-csp",
+	"repository": "https://github.com/westonruter/strict-csp",
+	"bugs": "https://github.com/westonruter/strict-csp/issues",
 	"devDependencies": {
 		"@wordpress/scripts": "*",
 		"husky": "^9",
@@ -20,7 +20,7 @@
 		"lint:js": "wp-scripts lint-js",
 		"lint:md": "wp-scripts lint-md-docs",
 		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "npm run transform-readme && git archive --format=zip --output=wp-plugin-template.zip --add-file readme.txt HEAD && zip wp-plugin-template.zip -d README.md",
+		"plugin-zip": "npm run transform-readme && git archive --format=zip --output=strict-csp.zip --add-file readme.txt HEAD && zip strict-csp.zip -d README.md",
 		"prepare": "husky",
 		"transform-readme": "php tools/transform-readme.php",
 		"verify-version-consistency": "php tools/verify-version-consistency.php"
