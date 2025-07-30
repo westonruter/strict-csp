@@ -108,7 +108,7 @@ function get_csp_header_value(): string {
 		'http:',
 	);
 
-	return join(
+	return implode(
 		'; ',
 		array(
 			"object-src 'none'",
