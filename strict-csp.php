@@ -144,7 +144,9 @@ function filter_wp_headers( $headers ): array {
 	return $headers;
 }
 
-add_filter( 'wp_headers', __NAMESPACE__ . '\filter_wp_headers' );
+if ( ! is_admin() ) {
+	add_filter( 'wp_headers', __NAMESPACE__ . '\filter_wp_headers' );
+}
 add_action( 'login_init', __NAMESPACE__ . '\send_csp_header' );
 
 // Add the nonce attribute to scripts.
