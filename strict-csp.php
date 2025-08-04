@@ -91,8 +91,6 @@ function filter_oembed_html( $html ): string {
 	return $processor->get_updated_html();
 }
 
-add_filter( 'embed_oembed_html', __NAMESPACE__ . '\filter_oembed_html' );
-
 /**
  * Gets Strict CSP header value.
  *
@@ -146,15 +144,17 @@ function filter_wp_headers( $headers ): array {
 
 if ( ! is_admin() ) {
 	add_filter( 'wp_headers', __NAMESPACE__ . '\filter_wp_headers' );
+
+	// Add the nonce attribute to scripts.
+	add_filter(
+		'wp_script_attributes',
+		__NAMESPACE__ . '\add_nonce_to_script_attributes'
+	);
+	add_filter(
+		'wp_inline_script_attributes',
+		__NAMESPACE__ . '\add_nonce_to_script_attributes'
+	);
+
+	add_filter( 'embed_oembed_html', __NAMESPACE__ . '\filter_oembed_html' );
 }
 add_action( 'login_init', __NAMESPACE__ . '\send_csp_header' );
-
-// Add the nonce attribute to scripts.
-add_filter(
-	'wp_script_attributes',
-	__NAMESPACE__ . '\add_nonce_to_script_attributes'
-);
-add_filter(
-	'wp_inline_script_attributes',
-	__NAMESPACE__ . '\add_nonce_to_script_attributes'
-);
