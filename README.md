@@ -19,7 +19,7 @@ In [#58664](https://core.trac.wordpress.org/ticket/58664), the manual constructi
 
 ```php
 function my_theme_supports_js() {
-	echo '<script>document.body.classList.remove("no-js");</script>'; // ❌ DO NOT DO THIS 👎
+	echo '<script>document.body.classList.remove("no-js");</script>'; // ❌
 }
 add_action( 'wp_footer', 'my_theme_supports_js' );
 ```
@@ -28,7 +28,7 @@ Instead, do this:
 
 ```php
 function my_theme_supports_js() {
-	wp_print_inline_script_tag( 'document.body.classList.remove("no-js");' ); // ✅ Do this instead 👍
+	wp_print_inline_script_tag( 'document.body.classList.remove("no-js");' ); // ✅
 }
 add_action( 'wp_footer', 'my_theme_supports_js' );
 ```

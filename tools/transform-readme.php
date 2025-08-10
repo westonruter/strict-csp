@@ -60,7 +60,9 @@ $readme_txt = $readme_md;
 $readme_txt = (string) preg_replace_callback(
 	'/(^|\n)```(\w+)?\n(.+?\n)```/s',
 	static function ( $matches ): string {
-		return $matches[1] . '<pre>' . trim( $matches[3] ) . '</pre>';
+		$text_content = trim( $matches[3] );
+		$text_content = htmlspecialchars( $text_content );
+		return $matches[1] . '<pre>' . $text_content . '</pre>';
 	},
 	$readme_txt
 );
