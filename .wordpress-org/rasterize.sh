@@ -1,13 +1,14 @@
 #!/bin/bash
+set -e
 
 if ! command -v rsvg-convert >/dev/null 2>&1; then
-	echo "Error: The rsvg-convert  is not available."
+	echo "Error: The rsvg-convert is not available."
 	echo "On macOS, you can install it with Homebrew: brew install librsvg"
 	exit 1
 fi
 
 if ! command -v oxipng >/dev/null 2>&1; then
-	echo "Error: The oxipng  is not available."
+	echo "Error: The oxipng is not available."
 	echo "On macOS, you can install it with Homebrew: brew install oxipng"
 	exit 1
 fi
