@@ -18,11 +18,13 @@ for size in 128 256; do
 	oxipng --opt 6 --strip all "$png_file"
 done
 
-rsvg-convert -w 772 -h 250 -o "banner-772x250.png" banner.svg
-oxipng --opt 6 --strip all "banner-772x250.png"
-
-rsvg-convert -w 1544 -h 500 -o "banner-1544x500.png" banner.svg
-oxipng --opt 6 --strip all "banner-1544x500.png"
+for size in 772x250 1544x500; do
+	width=${size%x*}
+	height=${size#*x}
+	png_file="banner-${size}.png"
+	rsvg-convert -w $width -h $height -o "$png_file" banner.svg
+	oxipng --opt 6 --strip all "$png_file"
+done
 
 rsvg-convert -w 1280 -h 640 -o "banner-github.png" banner-github.svg
 oxipng --opt 6 --strip all "banner-github.png"
