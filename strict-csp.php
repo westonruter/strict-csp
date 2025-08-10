@@ -2,17 +2,17 @@
 /**
  * Strict CSP Plugin for WordPress
  *
- * @package   StrictCSP
- * @author    Weston Ruter, Google
- * @license   GPL-2.0-or-later
- * @copyright 2023 Google Inc.
+ * @package StrictCSP
+ * @author  Weston Ruter
+ * @license GPL-2.0-or-later
+ * @link    https://gist.github.com/westonruter/c8b49406391a8d86a5864fb41a523ae9 Originally developed in a Gist when the author was at Google.
  *
  * @wordpress-plugin
  * Plugin Name: Strict CSP
  * Plugin URI: https://github.com/westonruter/strict-csp
  * Description: Enables a <a href="https://web.dev/articles/strict-csp">Strict Content Security Policy</a> on the frontend and login screen; the policy cannot yet be applied to the WP Admin yet (see <a href="https://core.trac.wordpress.org/ticket/59446">#59446</a>).
  * Requires at least: 6.4
- * Requires PHP: 8.1
+ * Requires PHP: 7.2
  * Version: 0.3.0
  * Author: Weston Ruter
  * Author URI: https://weston.ruter.net/
