@@ -3,7 +3,7 @@
 Enables a Strict Content Security Policy on the frontend and login screen.
 
 <!-- markdownlint-disable-next-line no-inline-html -->
-<img src=".wordpress-org/banner.svg" alt="Banner" width="1544" height="500">
+<img src=".wordpress-org/banner.svg" alt="Banner for the Strict CSP plugin" width="1544" height="500">
 
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         security  
