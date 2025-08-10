@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Forked from https://github.com/WordPress/dashicons/blob/628951563b9c0f0d293af8e40c9b0b3da5e2880d/sources/svg/privacy.svg -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 20 20" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	<title>Icon for the Strict CSP plugin</title>
 	<rect x="0" y="0" width="20" height="20" fill="black"/>
 	<path d="M10,9.6c-0.6,0-1,0.4-1,1c0,0.4,0.3,0.7,0.6,0.8l-0.3,1.4h1.3l-0.3-1.4c0.4-0.1,0.6-0.4,0.6-0.8v0C11,10,10.6,9.6,10,9.6z
 	 M10.1,5.3c-0.7,0-1.4,0.5-1.4,1.2V8h2.7V6.5C11.3,5.8,10.8,5.3,10.1,5.3z M10,2L3,5v3c0.1,4.4,2.9,8.3,7,9.9c4.1-1.6,6.9-5.5,7-9.9
