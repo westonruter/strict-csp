@@ -8,7 +8,7 @@ Enables a Strict Content Security Policy on the frontend and login screen.
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         security  
 **Tested up to:** 6.8  
-**Stable tag:**   0.3.0  
+**Stable tag:**   0.3.1  
 **License:**      [GPLv2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## Description
@@ -39,6 +39,10 @@ You may also install and update via [Git Updater](https://git-updater.com/) usin
 5. Click the **Activate Plugin** button.
 
 ## Changelog
+
+### 0.3.1
+
+* Update required PHP version to 7.2 instead of 8.1.
 
 ### 0.3.0
 
