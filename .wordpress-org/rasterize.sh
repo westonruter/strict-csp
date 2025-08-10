@@ -17,3 +17,12 @@ for size in 128 256; do
 	rsvg-convert -w $size -h $size -o "$png_file" icon.svg
 	oxipng --opt 6 --strip all "$png_file"
 done
+
+rsvg-convert -w 772 -h 250 -o "banner-772x250.png" banner.svg
+oxipng --opt 6 --strip all "banner-772x250.png"
+
+rsvg-convert -w 1544 -h 500 -o "banner-1544x500.png" banner.svg
+oxipng --opt 6 --strip all "banner-1544x500.png"
+
+rsvg-convert -w 1280 -h 640 -o "banner-github.png" banner-github.svg
+oxipng --opt 6 --strip all "banner-github.png"

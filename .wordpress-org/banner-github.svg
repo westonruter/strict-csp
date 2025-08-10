@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Icon derived from https://github.com/WordPress/dashicons/blob/628951563b9c0f0d293af8e40c9b0b3da5e2880d/sources/svg/privacy.svg
+SVG modified to be 1280x640 with the icon centered and scaled up, props Gemini 2.5 Pro
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+	<title>GitHub social preview for the Strict CSP plugin</title>
+	<!-- Background rectangle filling the entire new viewport -->
+	<rect x="0" y="0" width="1280" height="640" fill="black"/>
+	<!-- The original path is placed in a group, translated to the center, and scaled up.
+		 The transform operations are applied from right to left:
+		 1. translate(-10, -10): Moves the icon's own center point (10,10) to the origin (0,0).
+		 2. scale(15): Scales the icon up by 15 times its original size.
+		 3. translate(640, 320): Moves the scaled icon to the center of the new 1280x640 viewport.
+	-->
+	<g transform="translate(640, 320) scale(15) translate(-10, -10)">
+		<path d="M10,9.6c-0.6,0-1,0.4-1,1c0,0.4,0.3,0.7,0.6,0.8l-0.3,1.4h1.3l-0.3-1.4c0.4-0.1,0.6-0.4,0.6-0.8v0C11,10,10.6,9.6,10,9.6z M10.1,5.3c-0.7,0-1.4,0.5-1.4,1.2V8h2.7V6.5C11.3,5.8,10.8,5.3,10.1,5.3z M10,2L3,5v3c0.1,4.4,2.9,8.3,7,9.9c4.1-1.6,6.9-5.5,7-9.9 V5L10,2z M14,13c0,0.6-0.4,1-1,1H7c-0.6,0-1-0.4-1-1V9c0-0.6,0.4-1,1-1h0.3V6.5C7.4,5.1,8.6,4,10,4c1.4,0,2.6,1.1,2.7,2.5V8H13 c0.6,0,1,0.4,1,1V13z" fill="white"/>
+	</g>
+</svg>

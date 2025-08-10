@@ -2,6 +2,8 @@
 
 Enables a Strict Content Security Policy on the frontend and login screen.
 
+![Banner](.wordpress-org/banner.svg)
+
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         security  
 **Tested up to:** 6.8  
