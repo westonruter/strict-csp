@@ -12,6 +12,8 @@ if ! command -v oxipng >/dev/null 2>&1; then
 	exit 1
 fi
 
+cd "$(dirname "$0")"
+
 for size in 128 256; do
 	png_file="icon-${size}x${size}.png"
 	rsvg-convert -w $size -h $size -o "$png_file" icon.svg
