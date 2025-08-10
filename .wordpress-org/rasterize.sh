@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if ! command -v rsvg-convert >/dev/null 2>&1; then
 	echo "Error: The rsvg-convert  is not available."
 	echo "On macOS, you can install it with Homebrew: brew install librsvg"
