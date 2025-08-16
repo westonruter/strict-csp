@@ -45,7 +45,7 @@ const VERSION = '0.3.1';
 function get_nonce(): string {
 	static $nonce = null;
 	if ( null === $nonce ) {
-		$nonce = wp_create_nonce( 'csp' );
+		$nonce = wp_generate_password( 43, false, false );
 	}
 	/**
 	 * Nonce.
