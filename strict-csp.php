@@ -13,7 +13,7 @@
  * Description: Enforces a <a href="https://web.dev/articles/strict-csp">Strict Content Security Policy</a> on the frontend and login screen to help mitigate any XSS vulnerabilities; the policy cannot yet be applied to the WP Admin (see <a href="https://core.trac.wordpress.org/ticket/59446">#59446</a>).
  * Requires at least: 6.4
  * Requires PHP: 7.2
- * Version: 0.3.1
+ * Version: 0.3.2
  * Author: Weston Ruter
  * Author URI: https://weston.ruter.net/
  * License: GPLv2 or later
@@ -35,7 +35,7 @@ use WP_HTML_Tag_Processor;
  *
  * @var string
  */
-const VERSION = '0.3.1';
+const VERSION = '0.3.2';
 
 /**
  * Gets CSP nonce.
