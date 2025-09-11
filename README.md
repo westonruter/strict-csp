@@ -8,7 +8,7 @@ Enforces a Strict Content Security Policy on the frontend and login screen to he
 **Contributors:** [westonruter](https://profile.wordpress.org/westonruter)  
 **Tags:**         security  
 **Tested up to:** 6.8  
-**Stable tag:**   0.3.1  
+**Stable tag:**   0.3.2  
 **License:**      [GPLv2 or later](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
 ## Description
@@ -63,6 +63,10 @@ You may also install and update via [Git Updater](https://git-updater.com/) usin
 5. Click the **Activate Plugin** button.
 
 ## Changelog
+
+### 0.3.2
+
+* Use `wp_generate_password()` to create CSP nonce instead of using `wp_create_nonce()`. Props [kasparsd](https://profiles.wordpress.org/kasparsd/). ([#13](https://github.com/westonruter/strict-csp/pull/13))
 
 ### 0.3.1
 
