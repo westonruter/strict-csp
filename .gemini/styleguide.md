@@ -9,6 +9,8 @@ This style guide outlines the coding conventions for WordPress plugin code. In g
 
 Note that for the JavaScript Coding Standards, the code should also be formatted using Prettier, specifically the [wp-prettier](https://www.npmjs.com/package/wp-prettier) fork with the `--paren-spacing` option which inserts many extra spaces inside parentheses.
 
+For the HTML Coding Standards, disregard the guidance that void/empty tags should be self-closing, such as `IMG`, `BR`, `LINK`, or `META`. This is only relevant for XML (XHTML), not HTML. So instead of `<br />` this should only use `<br>`, for example.
+
 Additionally, the [inline documentation standards for WordPress](https://developer.wordpress.org/coding-standards/inline-documentation-standards/) should be followed:
 
 * [PHP Documentation Standards](https://developer.wordpress.org/coding-standards/inline-documentation-standards/php/)

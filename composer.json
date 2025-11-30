@@ -35,7 +35,8 @@
 		},
 		"platform": {
 			"php": "8.1"
-		}
+		},
+		"sort-packages": true
 	},
 	"extra": {
 		"installer-paths": {
