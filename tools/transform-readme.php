@@ -71,8 +71,8 @@ $readme_txt = (string) preg_replace_callback(
 $readme_txt = (string) preg_replace_callback(
 	'/^.+?(?=## Description)/s',
 	static function ( $matches ) {
-		// Delete lines with images or comments.
-		$input = trim( (string) preg_replace( '/^(!\[[^\]]+?\]\([^\)]+?\)|<img[^>]+?>|<!--.+?-->)$/m', '', $matches[0] ) );
+		// Delete lines with images, linked images (badges), or comments.
+		$input = trim( (string) preg_replace( '/^(\[?!\[[^]]+?]\([^)]+?\)(](.+?))?|<img[^>]+?>|<!--.+?-->)$/m', '', $matches[0] ) );
 
 		$parts = preg_split( '/\n\n+/', $input );
 
@@ -102,7 +102,7 @@ $readme_txt = (string) preg_replace_callback(
 			if ( 'License' === $matches['key'] ) {
 				$license_uri = (string) preg_replace( '/\[.+?]\((.+?)\)/', '$1', $matches['value'] );
 
-				if ( ! str_starts_with( $license_uri, 'http' ) ) {
+				if ( 0 !== strpos( $license_uri, 'http' ) ) {
 					error( "Unable to extract License URI from: $meta.", __LINE__ );
 				}
 
