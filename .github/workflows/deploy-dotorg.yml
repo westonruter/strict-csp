@@ -18,14 +18,14 @@ jobs:
             contents: write
         steps:
             - name: Checkout code
-              uses: actions/checkout@v6
+              uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
             - name: Read PHP version
               id: php-version
               run: echo "version=$(jq -r .config.platform.php composer.json)" >> $GITHUB_OUTPUT
 
             - name: Setup PHP
-              uses: shivammathur/setup-php@v2
+              uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # 2.36.0
               with:
                   php-version: ${{ steps.php-version.outputs.version }}
                   extensions: mbstring, dom, fileinfo, xml, curl
@@ -33,7 +33,7 @@ jobs:
                   tools: composer:v2
 
             - name: Cache Composer dependencies
-              uses: actions/cache@v5
+              uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
               with:
                   path: vendor
                   key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -44,7 +44,7 @@ jobs:
               run: composer install --prefer-dist --no-progress
 
             - name: Setup Node.js
-              uses: actions/setup-node@v6
+              uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f #v6.1.0
               with:
                   node-version-file: '.nvmrc'
                   cache: 'npm'
@@ -59,7 +59,7 @@ jobs:
               run: npm run plugin-zip && unzip *.zip -d dist
 
             - name: WordPress plugin deploy
-              uses: 10up/action-wordpress-plugin-deploy@stable
+              uses: 10up/action-wordpress-plugin-deploy@54bd289b8525fd23a5c365ec369185f2966529c2 # 2.3.0
               id: deploy
               with:
                   dry-run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry-run || false }}
