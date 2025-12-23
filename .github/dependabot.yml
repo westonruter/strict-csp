@@ -33,4 +33,4 @@ updates:
                   - 'phpstan/*'
           wp-cli-packages:
               patterns:
-                  - "wp-cli/*"
+                  - 'wp-cli/*'
