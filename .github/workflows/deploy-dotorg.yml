@@ -25,7 +25,7 @@ jobs:
               run: echo "version=$(jq -r .config.platform.php composer.json)" >> $GITHUB_OUTPUT
 
             - name: Setup PHP
-              uses: shivammathur/setup-php@44454db4f0199b8b9685a5d763dc37cbf79108e1 # 2.36.0
+              uses: shivammathur/setup-php@accd6127cb78bee3e8082180cb391013d204ef9f # 2.37.0
               with:
                   php-version: ${{ steps.php-version.outputs.version }}
                   extensions: mbstring, dom, fileinfo, xml, curl
