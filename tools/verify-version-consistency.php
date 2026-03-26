@@ -31,8 +31,8 @@ if ( ! is_array( $package_json ) ) {
 	echo 'Failed to parse package.json: ' . ( JSON_ERROR_NONE === json_last_error() ? 'Not an array' : json_last_error_msg() ) . "\n";
 	exit( 1 );
 }
-if ( ! array_key_exists( 'version', $package_json ) ) {
-	echo "The 'version' key is missing in package.json\n";
+if ( ! array_key_exists( 'version', $package_json ) || ! is_string( $package_json['version'] ) ) {
+	echo "The 'version' key is missing in package.json, or it is not a string.\n";
 	exit( 1 );
 }
 $versions['package_json'] = $package_json['version'];
