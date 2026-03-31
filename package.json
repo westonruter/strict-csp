@@ -16,7 +16,7 @@
 		"@wordpress/scripts": "*",
 		"husky": "^9",
 		"lint-staged": "^16",
-		"typescript": "^5"
+		"typescript": "^6"
 	},
 	"scripts": {
 		"check-engines": "wp-scripts check-engines",
