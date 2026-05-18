@@ -14,6 +14,7 @@
 	"bugs": "https://github.com/westonruter/strict-csp/issues",
 	"devDependencies": {
 		"@wordpress/scripts": "*",
+		"globals": "^17.6.0",
 		"husky": "^9",
 		"lint-staged": "^16",
 		"typescript": "^6"
@@ -27,7 +28,7 @@
 		"lint:composer:fix": "composer normalize",
 		"lint:css": "wp-scripts lint-style --allow-empty-input --ignore-path=.gitignore",
 		"lint:css:fix": "npm run lint:css -- --fix",
-		"lint:js": "wp-scripts lint-js --ignore-path=.gitignore",
+		"lint:js": "wp-scripts lint-js",
 		"lint:js:fix": "npm run lint:js -- --fix",
 		"lint:js:report": "npm run lint:js -- --output-file lint-js-report.json --format json .",
 		"lint:md": "wp-scripts lint-md-docs --ignore-path=.gitignore",
