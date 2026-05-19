@@ -13,22 +13,10 @@
 		"phpstan/phpstan": "^2",
 		"slevomat/coding-standard": "^8",
 		"szepeviktor/phpstan-wordpress": "^2",
-		"wp-coding-standards/wpcs": "^3",
-		"wpackagist-plugin/plugin-check": "^1.6"
+		"wp-coding-standards/wpcs": "^3"
 	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://wpackagist.org",
-			"only": [
-				"wpackagist-plugin/*",
-				"wpackagist-theme/*"
-			]
-		}
-	],
 	"config": {
 		"allow-plugins": {
-			"composer/installers": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"ergebnis/composer-normalize": true,
 			"phpstan/extension-installer": true
@@ -37,13 +25,6 @@
 			"php": "8.1"
 		},
 		"sort-packages": true
-	},
-	"extra": {
-		"installer-paths": {
-			"vendor/{$vendor}/{$name}/": [
-				"wpackagist-plugin/plugin-check"
-			]
-		}
 	},
 	"scripts": {
 		"phpcbf": "phpcbf",
