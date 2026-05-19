@@ -10,6 +10,7 @@
 .wordpress-org export-ignore
 composer.json export-ignore
 composer.lock export-ignore
+eslint.config.js
 lint-staged.config.js export-ignore
 lint-staged.config.mjs export-ignore
 package-lock.json export-ignore
