@@ -17,7 +17,7 @@
 		"globals": "^17.8.0",
 		"husky": "^9",
 		"lint-staged": "^17",
-		"typescript": "^6"
+		"typescript": "^7"
 	},
 	"scripts": {
 		"check-engines": "wp-scripts check-engines",
