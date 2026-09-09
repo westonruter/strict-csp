@@ -19,6 +19,27 @@ updates:
           wordpress-packages:
               patterns:
                   - '@wordpress/*'
+      # TypeScript uses a side-by-side layout: '@typescript/native' aliases
+      # typescript@7 to supply `tsc`, while 'typescript' aliases
+      # '@typescript/typescript6' to supply the TypeScript 6 API that
+      # typescript-eslint still embeds. TypeScript 7.0 ships no programmatic API,
+      # and typescript-eslint refuses to load against it, so a plain bump to
+      # typescript@7 breaks `npm run lint:js`. Full rationale:
+      # https://github.com/westonruter/strict-csp/pull/147
+      #
+      # Dependabot already skips any requirement beginning with 'npm:', so these
+      # produce no pull requests either way. Listing them makes the suppression
+      # explicit rather than an invisible parser behavior, and keeps it stable if
+      # that behavior ever changes.
+      #
+      # REVISIT when typescript-eslint supports TypeScript 7:
+      # https://github.com/typescript-eslint/typescript-eslint/issues/10940
+      # Both aliases then collapse back to a plain 'typescript' dependency, and
+      # this ignore block must be deleted along with them -- left behind, it
+      # would silently suppress the very updates it was added to explain.
+      ignore:
+          - dependency-name: 'typescript'
+          - dependency-name: '@typescript/native'
 
     - package-ecosystem: composer
       directory: '/'
